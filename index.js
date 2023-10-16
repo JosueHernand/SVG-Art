@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-// const {circle, triangle, square} = require('./lib/shapes');
+const {circle, triangle, square} = require('./lib/shapes');
 const fs = require('fs');
 
 const questions = [
@@ -60,7 +60,11 @@ function generateSVG(answers) {
     }
 
     shapeClass.setColor(answers.shapeColor);
+
     const shapeSVG = shapeClass.render();
+    const textElement = `<text x="150" y="250" fill="${answers.textColor}" text-anchor="middle">${answers.text}</text>`;
+    const svgContent = `<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">${shapeSVG}${textElement}</svg>`;
+    return svgContent;
 }
 
 function init() {
