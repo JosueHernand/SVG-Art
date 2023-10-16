@@ -58,8 +58,9 @@ function generateSVG(answers) {
             console.error('Invalid shape selection');
         return '';
     }
-    
+
     shapeClass.setColor(answers.shapeColor);
+    const shapeSVG = shapeClass.render();
 }
 
 function init() {
