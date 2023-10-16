@@ -41,3 +41,12 @@ function writeToFile(fileName, data) {
         }
     });
 }
+
+function init() {
+    inquirer.prompt(questions).then((answers) => {
+        const svgContent = generateSVG(answers);
+        writeToFile('logo.svg', svgContent);
+    });
+}
+
+init();
