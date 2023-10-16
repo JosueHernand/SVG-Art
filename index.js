@@ -1,9 +1,10 @@
 const inquirer = require('inquirer');
-const commonColors = ['red', 'green', 'blue', 'yellow', 'purple', 'hexadecimal'];
-const shapeOptions = ['circle', 'triangle', 'square'];
+const {circle, triangle, square} = require('./lib/shapes');
+const fs = require('fs');
 
 const questions = [
     {
+        type: 'input',
         name: 'text',
         message: 'Enter up to three characters:',
         validate: (input) => {
@@ -11,26 +12,32 @@ const questions = [
         },
     },
     {
+        type: 'input',
         name: 'textColor',
-        message: 'Enter text color or a hexadecimal:',
-        validate: (input) => {
-            return commonColors.includes(input) || /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(input);
-            // The regex helps ensure that the users input is either a common color or a valid hexadecimal color code
-            // Found this on https://www.geeksforgeeks.org/how-to-validate-hexadecimal-color-code-using-regular-expression/
-        },        
+        message: 'Enter text color or a hexadecimal:',     
     },
     {
+        type: 'list',
         name: 'shape',
         message: 'Choose a shape:',
-        type: 'list',
-        choices: shapeOptions,
+        choices: ['circle', 'triangle', 'square'],
     },
     {
+        type: 'input',
         name: 'shapeColor',
         message: 'Enter shape color or a hexadecimal number:',
-        validate: (input) => {
-            return commonColors.includes(input) || /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(input);
-            // This will be the same thing as line 17
         },
-    },
 ];
+
+function writeToFile(fileName, data) {
+    const folderPath = path.join(__dirname, 'examples');
+    const filePath = path.join(folderPath, fileName);
+
+    fs.writeFile(filePath, data, (err) => {
+        if (err) {
+            console.error('Error writing SVG file:', err);
+        } else {
+            console.log('Generated logo.svg in the examples folder.');
+        }
+    });
+}
