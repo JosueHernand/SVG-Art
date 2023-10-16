@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const {circle, triangle, square} = require('./lib/shapes');
+// const {circle, triangle, square} = require('./lib/shapes');
 const fs = require('fs');
 
 const questions = [
@@ -40,6 +40,24 @@ function writeToFile(fileName, data) {
             console.log('Generated logo.svg in the examples folder.');
         }
     });
+}
+
+function generateSVG(answers) {
+    let shapeClass;
+    switch (answers.shape) {
+        case 'circle':
+            shapeClass = new circle();
+            break;
+        case 'triangle':
+            shapeClass = new triangle();
+            break;
+        case 'square':
+            shapeClass = new square();
+            break;
+        default:
+            console.error('Invalid shape selection');
+        return '';
+    }
 }
 
 function init() {
