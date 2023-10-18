@@ -17,8 +17,8 @@ As a freelance web developer, my motivation behind this project was to create a 
 This is a logo design process, saving time and costs while fostering creativity and self-sufficiency.
 
 To view a small quick demo [Click Here](https://drive.google.com/file/d/16VEZwN87DgDLgB9hhEqRTdh_AayWCe3J/view)
-![SVG Logo](./lib/images/Logo.png)
-![Jest Test](./lib/images/JestTest.png)
+[SVG Logo](./lib/images/Logo.png)
+[Jest Test](./lib/images/JestTest.png)
 
 ## Credits
 
