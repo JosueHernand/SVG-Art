@@ -1,4 +1,4 @@
-# <SVG-Art>
+# <SVG Art>
 
 ## Description
 
