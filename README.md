@@ -6,7 +6,7 @@ As a freelance web developer, my motivation behind this project was to create a 
 
 ## Installation
 
-1) Clone the repo by doing the following: git clone git@github.com:JosueHernand/SVG-Art.git
+1) Clone the repo: https://github.com/JosueHernand/SVG-Art
 2) Open repo in your code editor
 3) You'll need nodejs too: https://nodejs.org/en/download/current
 4) Inside termial you will type the following: npm i
